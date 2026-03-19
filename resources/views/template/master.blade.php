@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scoring System</title>
     @vite('resources/css/app.css')
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
-<body class="flex h-screen bg-gray-50 overflow-hidden">
+<body class="flex h-screen bg-gray-50 overflow-hidden" x-data="{ sidebarOpen: false }">
 
     @include('template.left_menu')
 

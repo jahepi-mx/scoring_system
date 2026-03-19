@@ -12,7 +12,8 @@ class Factor extends Model
         'evaluation_id',
         'name',
         'percentage',
-        'total_hits'
+        'total_hits',
+        'excel_column',
     ];
 
     /**

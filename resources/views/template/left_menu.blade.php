@@ -1,4 +1,12 @@
-<aside class="absolute left-0 top-0 z-999 flex h-screen w-72 flex-col overflow-y-hidden bg-boxdark duration-300 ease-linear lg:static lg:translate-x-0">
+<div x-show="sidebarOpen"
+     @click="sidebarOpen = false"
+     x-transition.opacity.duration.300ms
+     class="fixed inset-0 z-998 bg-black/50 lg:hidden">
+</div>
+
+<aside @click.outside="sidebarOpen = false"
+       :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'"
+       class="absolute left-0 top-0 z-999 flex h-screen w-72 flex-col overflow-y-hidden bg-boxdark duration-300 ease-linear lg:static lg:translate-x-0 -translate-x-full">
 
     <div class="flex items-center justify-between gap-2 px-6 py-6 border-b border-strokedark">
         <a href="{{ url('/') }}" class="flex items-center gap-2 text-2xl font-bold text-white">
@@ -10,8 +18,7 @@
     </div>
 
     <div class="flex flex-col overflow-y-auto duration-300 ease-linear">
-        <nav class="mt-5 px-4 py-4 lg:mt-2 lg:px-6">
-
+        <nav class="mt-5 px-4 py-4 lg:mt-9 lg:px-6">
             <div>
                 <h3 class="mb-4 ml-4 text-sm font-semibold text-bodydark2">MENU</h3>
 
@@ -37,7 +44,6 @@
                     </li>
                 </ul>
             </div>
-
         </nav>
     </div>
 </aside>
